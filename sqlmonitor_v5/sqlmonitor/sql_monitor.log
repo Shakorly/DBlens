@@ -1,0 +1,512 @@
+2026-04-16 18:25:17 [INFO ] [SYSTEM        ] DBLens Monitor v5 started | servers=1 | poll=60s | slow_query=5000ms | anomaly=30% | log=sql_monitor.log
+2026-04-16 18:25:17 [INFO ] [SYSTEM        ] Thresholds | conn=200 | cpu=80% | mem<=10% | disk_io>=50ms | ag_lag>=30s | backup_full>=25h | cooldown=10m
+2026-04-16 18:25:17 [INFO ] [SYSTEM        ] v5: index_check=6h | integrity_check=24h | disk_warn=<20% | disk_crit=<10%
+2026-04-16 18:25:17 [INFO ] [SYSTEM        ]   → SHAKORYSMARTTEC      localhost:1433  databases=4  pw-source=env
+2026-04-16 18:25:17 [INFO ] [SYSTEM        ] 🌐 Dashboard → http://localhost:8080
+2026-04-16 18:25:18 [WARN ] [SHAKORYSMARTTEC] Initial connection failed — will retry on first poll: ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:25:18 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:25:18 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:25:18
+2026-04-16 18:25:18 [ERROR] [SHAKORYSMARTTEC] Collection error: connection failed (backoff 1m): ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:25:18 [INFO ] [SYSTEM        ] Collection cycle complete | duration=97ms | ok=0 | failed=1
+2026-04-16 18:26:18 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:26:18 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:26:18
+2026-04-16 18:26:18 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:26:18 (1 consecutive fails)
+2026-04-16 18:26:18 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:27:18 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:27:18 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:27:18
+2026-04-16 18:27:18 [ERROR] [SHAKORYSMARTTEC] Collection error: connection failed (backoff 2m): ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:27:18 [INFO ] [SYSTEM        ] Collection cycle complete | duration=50ms | ok=0 | failed=1
+2026-04-16 18:28:18 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:28:18 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:28:18
+2026-04-16 18:28:18 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:29:18 (2 consecutive fails)
+2026-04-16 18:28:18 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:29:18 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:29:18 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:29:18
+2026-04-16 18:29:18 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:29:18 (2 consecutive fails)
+2026-04-16 18:29:18 [INFO ] [SYSTEM        ] Collection cycle complete | duration=27ms | ok=0 | failed=1
+2026-04-16 18:30:18 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:30:18 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:30:18
+2026-04-16 18:30:18 [ERROR] [SHAKORYSMARTTEC] Collection error: connection failed (backoff 4m): ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:30:18 [INFO ] [SYSTEM        ] Collection cycle complete | duration=43ms | ok=0 | failed=1
+2026-04-16 18:31:18 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:31:18 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:31:18
+2026-04-16 18:31:18 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:34:18 (3 consecutive fails)
+2026-04-16 18:31:18 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:32:18 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:32:18 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:32:18
+2026-04-16 18:32:18 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:34:18 (3 consecutive fails)
+2026-04-16 18:32:18 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:33:18 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:33:18 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:33:18
+2026-04-16 18:33:18 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:34:18 (3 consecutive fails)
+2026-04-16 18:33:18 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:33:32 [INFO ] [SYSTEM        ] Signal: interrupt — shutting down
+2026-04-16 18:33:39 [INFO ] [SYSTEM        ] DBLens Monitor v5 started | servers=1 | poll=60s | slow_query=5000ms | anomaly=30% | log=sql_monitor.log
+2026-04-16 18:33:39 [INFO ] [SYSTEM        ] Thresholds | conn=200 | cpu=80% | mem<=10% | disk_io>=50ms | ag_lag>=30s | backup_full>=25h | cooldown=10m
+2026-04-16 18:33:39 [INFO ] [SYSTEM        ] v5: index_check=6h | integrity_check=24h | disk_warn=<20% | disk_crit=<10%
+2026-04-16 18:33:39 [INFO ] [SYSTEM        ]   → SHAKORYSMARTTEC      localhost:1433  databases=4  pw-source=env
+2026-04-16 18:33:39 [INFO ] [SYSTEM        ] 🌐 Dashboard → http://localhost:8080
+2026-04-16 18:33:39 [WARN ] [SHAKORYSMARTTEC] Initial connection failed — will retry on first poll: ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:33:39 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:33:39 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:33:39
+2026-04-16 18:33:39 [ERROR] [SHAKORYSMARTTEC] Collection error: connection failed (backoff 1m): ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:33:39 [INFO ] [SYSTEM        ] Collection cycle complete | duration=38ms | ok=0 | failed=1
+2026-04-16 18:34:39 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:34:39 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:34:39
+2026-04-16 18:34:39 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:34:39 (1 consecutive fails)
+2026-04-16 18:34:39 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:35:39 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:35:39 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:35:39
+2026-04-16 18:35:39 [ERROR] [SHAKORYSMARTTEC] Collection error: connection failed (backoff 2m): ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:35:39 [INFO ] [SYSTEM        ] Collection cycle complete | duration=48ms | ok=0 | failed=1
+2026-04-16 18:36:39 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:36:39 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:36:39
+2026-04-16 18:36:39 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:37:39 (2 consecutive fails)
+2026-04-16 18:36:39 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:37:39 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:37:39 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:37:39
+2026-04-16 18:37:39 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:37:39 (2 consecutive fails)
+2026-04-16 18:37:39 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:38:39 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:38:39 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:38:39
+2026-04-16 18:38:39 [ERROR] [SHAKORYSMARTTEC] Collection error: connection failed (backoff 4m): ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:38:39 [INFO ] [SYSTEM        ] Collection cycle complete | duration=44ms | ok=0 | failed=1
+2026-04-16 18:39:39 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:39:39 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:39:39
+2026-04-16 18:39:39 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:42:39 (3 consecutive fails)
+2026-04-16 18:39:39 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:40:39 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:40:39 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:40:39
+2026-04-16 18:40:39 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:42:39 (3 consecutive fails)
+2026-04-16 18:40:39 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:41:18 [INFO ] [SYSTEM        ] Signal: interrupt — shutting down
+2026-04-16 18:41:53 [INFO ] [SYSTEM        ] DBLens Monitor v5 started | servers=1 | poll=60s | slow_query=5000ms | anomaly=30% | log=sql_monitor.log
+2026-04-16 18:41:53 [INFO ] [SYSTEM        ] Thresholds | conn=200 | cpu=80% | mem<=10% | disk_io>=50ms | ag_lag>=30s | backup_full>=25h | cooldown=10m
+2026-04-16 18:41:53 [INFO ] [SYSTEM        ] v5: index_check=6h | integrity_check=24h | disk_warn=<20% | disk_crit=<10%
+2026-04-16 18:41:53 [INFO ] [SYSTEM        ]   → SHAKORYSMARTTEC      localhost:1433  databases=4  pw-source=env
+2026-04-16 18:41:53 [INFO ] [SYSTEM        ] 🌐 Dashboard → http://localhost:8080
+2026-04-16 18:41:53 [WARN ] [SHAKORYSMARTTEC] Initial connection failed — will retry on first poll: ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:41:53 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:41:53 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:41:53
+2026-04-16 18:41:53 [ERROR] [SHAKORYSMARTTEC] Collection error: connection failed (backoff 1m): ping failed: mssql: login error: Login failed for user 'sqlmonitor_user'.
+2026-04-16 18:41:53 [INFO ] [SYSTEM        ] Collection cycle complete | duration=48ms | ok=0 | failed=1
+2026-04-16 18:42:53 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 18:42:53 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 18:42:53
+2026-04-16 18:42:53 [ERROR] [SHAKORYSMARTTEC] Collection error: skipped — circuit open until 18:42:53 (1 consecutive fails)
+2026-04-16 18:42:53 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1ms | ok=0 | failed=1
+2026-04-16 18:43:38 [INFO ] [SYSTEM        ] Signal: terminated — shutting down
+2026-04-16 19:00:43 [INFO ] [SYSTEM        ] DBLens Monitor v5 started | servers=1 | poll=60s | slow_query=5000ms | anomaly=30% | log=sql_monitor.log
+2026-04-16 19:00:43 [INFO ] [SYSTEM        ] Thresholds | conn=200 | cpu=80% | mem<=10% | disk_io>=50ms | ag_lag>=30s | backup_full>=25h | cooldown=10m
+2026-04-16 19:00:43 [INFO ] [SYSTEM        ] v5: index_check=6h | integrity_check=24h | disk_warn=<20% | disk_crit=<10%
+2026-04-16 19:00:43 [INFO ] [SYSTEM        ]   → SHAKORYSMARTTEC      localhost:1433  databases=4  pw-source=env
+2026-04-16 19:00:43 [INFO ] [SYSTEM        ] 🌐 Dashboard → http://localhost:8080
+2026-04-16 19:00:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:00:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:00:43
+2026-04-16 19:00:47 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=90/100
+2026-04-16 19:00:47 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:00:47 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:00:47 [INFO ] [SHAKORYSMARTTEC] Connections | total=14 active=6 blocked=0
+2026-04-16 19:00:47 [WARN ] [SHAKORYSMARTTEC] ALERT: Long-running queries: 1 (>5000ms)
+2026-04-16 19:00:47 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=35604 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:00:47 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=5% mem_avail=964MB (used=88.0%) sql_mem=179MB
+2026-04-16 19:00:47 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:00:47 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:00:47 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 79.0% avg=43.2ms
+2026-04-16 19:00:47 [WARN ] [SHAKORYSMARTTEC] ALERT: Dominant wait: SOS_WORK_DISPATCHER (Other) 79%
+2026-04-16 19:00:47 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:00:47 [WARN ] [SHAKORYSMARTTEC] ALERT: Query plan regression: db=distribution 1217% slower
+2026-04-16 19:00:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:00:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:00:47 [INFO ] [SYSTEM        ] Collection cycle complete | duration=4.066s | ok=1 | failed=0
+2026-04-16 19:01:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:01:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:01:43
+2026-04-16 19:01:47 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=90/100
+2026-04-16 19:01:47 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:01:47 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:01:47 [INFO ] [SHAKORYSMARTTEC] Connections | total=14 active=5 blocked=0
+2026-04-16 19:01:47 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=62 elapsed_ms=36810 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:01:47 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=3% mem_avail=1121MB (used=86.0%) sql_mem=174MB
+2026-04-16 19:01:47 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:01:47 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:01:47 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.9% avg=43.6ms
+2026-04-16 19:01:47 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:01:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:01:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:01:47 [INFO ] [SYSTEM        ] Collection cycle complete | duration=4.404s | ok=1 | failed=0
+2026-04-16 19:02:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:02:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:02:43
+2026-04-16 19:02:45 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=B score=80/100
+2026-04-16 19:02:45 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:02:45 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:02:45 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=6 blocked=1
+2026-04-16 19:02:45 [WARN ] [SHAKORYSMARTTEC] ALERT: Blocked sessions: 1
+2026-04-16 19:02:45 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=35738 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:02:45 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=3% mem_avail=1032MB (used=87.2%) sql_mem=184MB
+2026-04-16 19:02:45 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:02:45 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:02:45 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.9% avg=43.9ms
+2026-04-16 19:02:45 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:02:45 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:02:45 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:02:45 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1.476s | ok=1 | failed=0
+2026-04-16 19:03:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:03:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:03:43
+2026-04-16 19:03:45 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=90/100
+2026-04-16 19:03:45 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:03:45 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:03:45 [INFO ] [SHAKORYSMARTTEC] Connections | total=14 active=6 blocked=0
+2026-04-16 19:03:45 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=95989 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:03:45 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=3% mem_avail=1056MB (used=86.9%) sql_mem=181MB
+2026-04-16 19:03:45 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:03:45 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:03:45 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.9% avg=44.2ms
+2026-04-16 19:03:45 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:03:45 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:03:45 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:03:45 [INFO ] [SYSTEM        ] Collection cycle complete | duration=2.026s | ok=1 | failed=0
+2026-04-16 19:04:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:04:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:04:43
+2026-04-16 19:04:45 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=90/100
+2026-04-16 19:04:45 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:04:45 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:04:45 [INFO ] [SHAKORYSMARTTEC] Connections | total=14 active=6 blocked=0
+2026-04-16 19:04:45 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=156183 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:04:45 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=4% mem_avail=900MB (used=88.8%) sql_mem=190MB
+2026-04-16 19:04:45 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:04:45 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:04:45 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 79.0% avg=44.4ms
+2026-04-16 19:04:45 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:04:45 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:04:45 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:04:45 [INFO ] [SYSTEM        ] Collection cycle complete | duration=2.291s | ok=1 | failed=0
+2026-04-16 19:05:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:05:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:05:43
+2026-04-16 19:05:46 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=90/100
+2026-04-16 19:05:46 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:05:46 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:05:46 [INFO ] [SHAKORYSMARTTEC] Connections | total=14 active=6 blocked=0
+2026-04-16 19:05:46 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=215823 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:05:46 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=7% mem_avail=949MB (used=88.2%) sql_mem=153MB
+2026-04-16 19:05:46 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:05:46 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:05:46 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 79.0% avg=44.3ms
+2026-04-16 19:05:46 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:05:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:05:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:05:46 [INFO ] [SYSTEM        ] Collection cycle complete | duration=2.451s | ok=1 | failed=0
+2026-04-16 19:06:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:06:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:06:43
+2026-04-16 19:06:48 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=90/100
+2026-04-16 19:06:48 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:06:48 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:06:48 [INFO ] [SHAKORYSMARTTEC] Connections | total=11 active=3 blocked=0
+2026-04-16 19:06:48 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=276362 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:06:48 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=5% mem_avail=1390MB (used=82.7%) sql_mem=141MB
+2026-04-16 19:06:48 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:06:48 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:06:48 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 79.0% avg=44.5ms
+2026-04-16 19:06:48 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:06:48 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:06:48 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:06:48 [INFO ] [SYSTEM        ] Collection cycle complete | duration=5.3s | ok=1 | failed=0
+2026-04-16 19:07:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:07:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:07:43
+2026-04-16 19:07:47 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=90/100
+2026-04-16 19:07:47 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:07:47 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:07:47 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=6 blocked=0
+2026-04-16 19:07:47 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=336351 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:07:47 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=2% mem_avail=1061MB (used=86.8%) sql_mem=156MB
+2026-04-16 19:07:47 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:07:47 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:07:47 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 79.0% avg=45.1ms
+2026-04-16 19:07:47 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:07:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:07:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:07:47 [INFO ] [SYSTEM        ] Collection cycle complete | duration=3.763s | ok=1 | failed=0
+2026-04-16 19:08:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:08:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:08:43
+2026-04-16 19:08:46 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=B score=80/100
+2026-04-16 19:08:46 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:08:46 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:08:46 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=6 blocked=1
+2026-04-16 19:08:46 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=396027 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:08:46 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=3% mem_avail=868MB (used=89.2%) sql_mem=157MB
+2026-04-16 19:08:46 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:08:46 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:08:46 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 79.0% avg=45.2ms
+2026-04-16 19:08:46 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:08:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:08:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:08:46 [INFO ] [SYSTEM        ] Collection cycle complete | duration=2.506s | ok=1 | failed=0
+2026-04-16 19:09:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:09:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:09:43
+2026-04-16 19:09:46 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=90/100
+2026-04-16 19:09:46 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:09:46 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:09:46 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=6 blocked=0
+2026-04-16 19:09:46 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=455759 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:09:46 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=7% mem_avail=976MB (used=87.9%) sql_mem=153MB
+2026-04-16 19:09:46 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:09:46 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:09:46 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.8% avg=45.2ms
+2026-04-16 19:09:46 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:09:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:09:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:09:46 [INFO ] [SYSTEM        ] Collection cycle complete | duration=2.472s | ok=1 | failed=0
+2026-04-16 19:10:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:10:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:10:43
+2026-04-16 19:10:56 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=B score=80/100
+2026-04-16 19:10:56 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:10:56 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:10:56 [INFO ] [SHAKORYSMARTTEC] Connections | total=10 active=3 blocked=0
+2026-04-16 19:10:56 [WARN ] [SHAKORYSMARTTEC] ALERT: Long-running queries: 1 (>5000ms)
+2026-04-16 19:10:56 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=516907 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:10:56 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=4% mem_avail=767MB (used=90.5%) sql_mem=170MB
+2026-04-16 19:10:56 [WARN ] [SHAKORYSMARTTEC] ALERT: Low memory: 9.5% available
+2026-04-16 19:10:56 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:10:56 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:10:56 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.8% avg=45.4ms
+2026-04-16 19:10:56 [WARN ] [SHAKORYSMARTTEC] ALERT: Dominant wait: SOS_WORK_DISPATCHER (Other) 79%
+2026-04-16 19:10:56 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:10:56 [WARN ] [SHAKORYSMARTTEC] ALERT: Query plan regression: db=distribution 1217% slower
+2026-04-16 19:10:56 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:10:56 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:10:56 [INFO ] [SYSTEM        ] Collection cycle complete | duration=12.917s | ok=1 | failed=0
+2026-04-16 19:11:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:11:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:11:43
+2026-04-16 19:11:48 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=90/100
+2026-04-16 19:11:48 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:11:48 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:11:48 [INFO ] [SHAKORYSMARTTEC] Connections | total=14 active=6 blocked=0
+2026-04-16 19:11:48 [WARN ] [SHAKORYSMARTTEC]   Query[1]: sid=63 elapsed_ms=575862 db=msdb wait=BROKER_RECEIVE_WAITFOR
+2026-04-16 19:11:48 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=6% mem_avail=1147MB (used=85.7%) sql_mem=168MB
+2026-04-16 19:11:48 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:11:48 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:11:48 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.8% avg=45.4ms
+2026-04-16 19:11:48 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:11:48 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:11:48 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:11:48 [INFO ] [SYSTEM        ] Collection cycle complete | duration=5.201s | ok=1 | failed=0
+2026-04-16 19:12:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:12:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:12:43
+2026-04-16 19:12:49 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:12:49 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:12:49 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:12:49 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=5 blocked=0
+2026-04-16 19:12:49 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:12:49 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=2% mem_avail=1098MB (used=86.3%) sql_mem=172MB
+2026-04-16 19:12:49 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:12:49 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:12:49 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.5% avg=45.6ms
+2026-04-16 19:12:49 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:12:49 [WARN ] [SHAKORYSMARTTEC] ALERT: Statistical anomaly: ANOMALY: SlowQueries — current=0.0 baseline=0.9 (100% below normal, z=3.5)
+2026-04-16 19:12:49 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:12:49 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:12:49 [INFO ] [SYSTEM        ] Collection cycle complete | duration=5.82s | ok=1 | failed=0
+2026-04-16 19:13:43 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:13:43 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:13:43
+2026-04-16 19:13:46 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:13:46 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:13:46 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:13:46 [INFO ] [SHAKORYSMARTTEC] Connections | total=14 active=5 blocked=0
+2026-04-16 19:13:46 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:13:46 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=4% mem_avail=845MB (used=89.5%) sql_mem=165MB
+2026-04-16 19:13:46 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:13:46 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:13:46 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.5% avg=45.6ms
+2026-04-16 19:13:46 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:13:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:13:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:13:46 [INFO ] [SYSTEM        ] Collection cycle complete | duration=2.95s | ok=1 | failed=0
+2026-04-16 19:14:21 [INFO ] [SYSTEM        ] Signal: interrupt — shutting down
+2026-04-16 19:14:31 [INFO ] [SYSTEM        ] DBLens Monitor v5 started | servers=2 | poll=60s | slow_query=5000ms | anomaly=30% | log=sql_monitor.log
+2026-04-16 19:14:31 [INFO ] [SYSTEM        ] Thresholds | conn=200 | cpu=80% | mem<=10% | disk_io>=50ms | ag_lag>=30s | backup_full>=25h | cooldown=10m
+2026-04-16 19:14:31 [INFO ] [SYSTEM        ] v5: index_check=6h | integrity_check=24h | disk_warn=<20% | disk_crit=<10%
+2026-04-16 19:14:31 [INFO ] [SYSTEM        ]   → SHAKORYSMARTTEC      localhost:1433  databases=4  pw-source=env
+2026-04-16 19:14:31 [INFO ] [SYSTEM        ]   → iPay                 20.196.197.156:1433  databases=4  pw-source=env
+2026-04-16 19:14:31 [INFO ] [SYSTEM        ] 🌐 Dashboard → http://localhost:8080
+2026-04-16 19:14:46 [WARN ] [iPay          ] Initial connection failed — will retry on first poll: ping failed: unable to open tcp connection with host '20.196.197.156:1433': dial tcp 20.196.197.156:1433: i/o timeout
+2026-04-16 19:14:46 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:14:46 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:14:46
+2026-04-16 19:14:48 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:14:48 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:14:48 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:14:48 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=5 blocked=0
+2026-04-16 19:14:48 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:14:48 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=7% mem_avail=1060MB (used=86.8%) sql_mem=161MB
+2026-04-16 19:14:48 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:14:48 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:14:48 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.5% avg=45.6ms
+2026-04-16 19:14:48 [WARN ] [SHAKORYSMARTTEC] ALERT: Dominant wait: SOS_WORK_DISPATCHER (Other) 79%
+2026-04-16 19:14:48 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:14:48 [WARN ] [SHAKORYSMARTTEC] ALERT: Query plan regression: db=distribution 1217% slower
+2026-04-16 19:14:48 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:14:48 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:15:01 [ERROR] [iPay          ] Collection error: connection failed (backoff 1m): ping failed: unable to open tcp connection with host '20.196.197.156:1433': dial tcp 20.196.197.156:1433: i/o timeout
+2026-04-16 19:15:01 [INFO ] [SYSTEM        ] Collection cycle complete | duration=15.001s | ok=1 | failed=1
+2026-04-16 19:15:28 [INFO ] [SYSTEM        ] Signal: interrupt — shutting down
+2026-04-16 19:15:44 [INFO ] [SYSTEM        ] DBLens Monitor v5 started | servers=2 | poll=60s | slow_query=5000ms | anomaly=30% | log=sql_monitor.log
+2026-04-16 19:15:44 [INFO ] [SYSTEM        ] Thresholds | conn=200 | cpu=80% | mem<=10% | disk_io>=50ms | ag_lag>=30s | backup_full>=25h | cooldown=10m
+2026-04-16 19:15:44 [INFO ] [SYSTEM        ] v5: index_check=6h | integrity_check=24h | disk_warn=<20% | disk_crit=<10%
+2026-04-16 19:15:44 [INFO ] [SYSTEM        ]   → SHAKORYSMARTTEC      localhost:1433  databases=4  pw-source=env
+2026-04-16 19:15:44 [INFO ] [SYSTEM        ]   → iPay                 20.196.197.156:3389  databases=4  pw-source=env
+2026-04-16 19:15:44 [INFO ] [SYSTEM        ] 🌐 Dashboard → http://localhost:8080
+2026-04-16 19:15:44 [WARN ] [iPay          ] Initial connection failed — will retry on first poll: ping failed: read tcp 172.20.10.5:50073->20.196.197.156:3389: wsarecv: An existing connection was forcibly closed by the remote host.
+2026-04-16 19:15:44 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:15:44 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:15:44
+2026-04-16 19:15:45 [ERROR] [iPay          ] Collection error: connection failed (backoff 1m): ping failed: read tcp 172.20.10.5:50076->20.196.197.156:3389: wsarecv: An existing connection was forcibly closed by the remote host.
+2026-04-16 19:15:46 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:15:46 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:15:46 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:15:46 [INFO ] [SHAKORYSMARTTEC] Connections | total=10 active=2 blocked=0
+2026-04-16 19:15:46 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:15:46 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=5% mem_avail=912MB (used=88.6%) sql_mem=170MB
+2026-04-16 19:15:46 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:15:46 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:15:46 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.6% avg=45.7ms
+2026-04-16 19:15:46 [WARN ] [SHAKORYSMARTTEC] ALERT: Dominant wait: SOS_WORK_DISPATCHER (Other) 79%
+2026-04-16 19:15:46 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:15:46 [WARN ] [SHAKORYSMARTTEC] ALERT: Query plan regression: db=distribution 1217% slower
+2026-04-16 19:15:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:15:46 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:15:46 [INFO ] [SYSTEM        ] Collection cycle complete | duration=1.957s | ok=1 | failed=1
+2026-04-16 19:16:44 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:16:44 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:16:44
+2026-04-16 19:16:44 [ERROR] [iPay          ] Collection error: skipped — circuit open until 19:16:45 (1 consecutive fails)
+2026-04-16 19:16:49 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:16:49 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:16:49 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:16:49 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=5 blocked=0
+2026-04-16 19:16:49 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:16:49 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=7% mem_avail=1388MB (used=82.7%) sql_mem=181MB
+2026-04-16 19:16:49 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:16:49 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:16:49 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.6% avg=46.0ms
+2026-04-16 19:16:49 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:16:49 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:16:49 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:16:49 [INFO ] [SYSTEM        ] Collection cycle complete | duration=4.465s | ok=1 | failed=1
+2026-04-16 19:17:44 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:17:44 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:17:44
+2026-04-16 19:17:45 [ERROR] [iPay          ] Collection error: connection failed (backoff 2m): ping failed: read tcp 172.20.10.5:52121->20.196.197.156:3389: wsarecv: An existing connection was forcibly closed by the remote host.
+2026-04-16 19:17:48 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:17:48 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:17:48 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:17:48 [INFO ] [SHAKORYSMARTTEC] Connections | total=11 active=3 blocked=0
+2026-04-16 19:17:48 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:17:48 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=2% mem_avail=1060MB (used=86.8%) sql_mem=183MB
+2026-04-16 19:17:48 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:17:48 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:17:48 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.6% avg=46.1ms
+2026-04-16 19:17:48 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:17:48 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:17:48 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:17:48 [INFO ] [SYSTEM        ] Collection cycle complete | duration=3.361s | ok=1 | failed=1
+2026-04-16 19:18:44 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:18:44 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:18:44
+2026-04-16 19:18:45 [ERROR] [iPay          ] Collection error: skipped — circuit open until 19:19:45 (2 consecutive fails)
+2026-04-16 19:18:51 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:18:51 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:18:51 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:18:51 [INFO ] [SHAKORYSMARTTEC] Connections | total=12 active=4 blocked=0
+2026-04-16 19:18:51 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:18:51 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=6% mem_avail=894MB (used=88.9%) sql_mem=170MB
+2026-04-16 19:18:51 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:18:51 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:18:51 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.6% avg=46.3ms
+2026-04-16 19:18:51 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:18:51 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:18:51 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:18:51 [INFO ] [SYSTEM        ] Collection cycle complete | duration=6.849s | ok=1 | failed=1
+2026-04-16 19:19:44 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:19:44 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:19:44
+2026-04-16 19:19:44 [ERROR] [iPay          ] Collection error: skipped — circuit open until 19:19:45 (2 consecutive fails)
+2026-04-16 19:19:47 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:19:47 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:19:47 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:19:47 [INFO ] [SHAKORYSMARTTEC] Connections | total=10 active=2 blocked=0
+2026-04-16 19:19:47 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:19:47 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=7% mem_avail=840MB (used=89.5%) sql_mem=178MB
+2026-04-16 19:19:47 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:19:47 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:19:47 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.7% avg=46.5ms
+2026-04-16 19:19:47 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:19:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:19:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:19:47 [INFO ] [SYSTEM        ] Collection cycle complete | duration=2.182s | ok=1 | failed=1
+2026-04-16 19:20:44 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:20:44 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:20:44
+2026-04-16 19:20:45 [ERROR] [iPay          ] Collection error: connection failed (backoff 4m): ping failed: read tcp 172.20.10.5:49524->20.196.197.156:3389: wsarecv: An existing connection was forcibly closed by the remote host.
+2026-04-16 19:20:47 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:20:47 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:20:47 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:20:47 [INFO ] [SHAKORYSMARTTEC] Connections | total=10 active=2 blocked=0
+2026-04-16 19:20:47 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:20:47 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=7% mem_avail=828MB (used=89.7%) sql_mem=175MB
+2026-04-16 19:20:47 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:20:47 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:20:47 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.7% avg=46.6ms
+2026-04-16 19:20:47 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:20:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:20:47 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:20:47 [INFO ] [SYSTEM        ] Collection cycle complete | duration=2.751s | ok=1 | failed=1
+2026-04-16 19:21:37 [INFO ] [SYSTEM        ] Signal: interrupt — shutting down
+2026-04-16 19:21:54 [INFO ] [SYSTEM        ] DBLens Monitor v5 started | servers=2 | poll=60s | slow_query=5000ms | anomaly=30% | log=sql_monitor.log
+2026-04-16 19:21:54 [INFO ] [SYSTEM        ] Thresholds | conn=200 | cpu=80% | mem<=10% | disk_io>=50ms | ag_lag>=30s | backup_full>=25h | cooldown=10m
+2026-04-16 19:21:54 [INFO ] [SYSTEM        ] v5: index_check=6h | integrity_check=24h | disk_warn=<20% | disk_crit=<10%
+2026-04-16 19:21:54 [INFO ] [SYSTEM        ]   → SHAKORYSMARTTEC      localhost:1433  databases=4  pw-source=env
+2026-04-16 19:21:54 [INFO ] [SYSTEM        ]   → iPay                 20.196.197.156:1433  databases=4  pw-source=env
+2026-04-16 19:21:54 [INFO ] [SYSTEM        ] 🌐 Dashboard → http://localhost:8080
+2026-04-16 19:22:09 [WARN ] [iPay          ] Initial connection failed — will retry on first poll: ping failed: unable to open tcp connection with host '20.196.197.156:1433': dial tcp 20.196.197.156:1433: i/o timeout
+2026-04-16 19:22:09 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:22:10 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:22:09
+2026-04-16 19:22:14 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:22:14 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:22:14 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:22:14 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=5 blocked=0
+2026-04-16 19:22:14 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:22:14 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=6% mem_avail=1219MB (used=84.8%) sql_mem=191MB
+2026-04-16 19:22:14 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:22:14 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:22:14 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.8% avg=46.5ms
+2026-04-16 19:22:14 [WARN ] [SHAKORYSMARTTEC] ALERT: Dominant wait: SOS_WORK_DISPATCHER (Other) 79%
+2026-04-16 19:22:14 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:22:14 [WARN ] [SHAKORYSMARTTEC] ALERT: Query plan regression: db=distribution 1217% slower
+2026-04-16 19:22:14 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:22:14 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:22:25 [ERROR] [iPay          ] Collection error: connection failed (backoff 1m): ping failed: unable to open tcp connection with host '20.196.197.156:1433': dial tcp 20.196.197.156:1433: i/o timeout
+2026-04-16 19:22:25 [INFO ] [SYSTEM        ] Collection cycle complete | duration=15.142s | ok=1 | failed=1
+2026-04-16 19:23:09 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:23:09 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:23:09
+2026-04-16 19:23:09 [ERROR] [iPay          ] Collection error: skipped — circuit open until 19:23:25 (1 consecutive fails)
+2026-04-16 19:23:16 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:23:16 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:23:16 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:23:16 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=5 blocked=0
+2026-04-16 19:23:16 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:23:16 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=2% mem_avail=1102MB (used=86.3%) sql_mem=171MB
+2026-04-16 19:23:16 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:23:16 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:23:16 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.8% avg=46.7ms
+2026-04-16 19:23:16 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:23:16 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:23:16 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:23:16 [INFO ] [SYSTEM        ] Collection cycle complete | duration=6.194s | ok=1 | failed=1
+2026-04-16 19:24:09 [INFO ] [SYSTEM        ] ────────────────────────────────────────────────────────────────────────
+2026-04-16 19:24:09 [INFO ] [SYSTEM        ] Collection cycle started at 2026-04-16 19:24:09
+2026-04-16 19:24:12 [INFO ] [SHAKORYSMARTTEC] HealthScore | grade=A score=100/100
+2026-04-16 19:24:12 [ERROR] [SHAKORYSMARTTEC] Collection error: backups: mssql: Cannot perform an aggregate function on an expression containing an aggregate or a subquery.
+2026-04-16 19:24:12 [ERROR] [SHAKORYSMARTTEC] Collection error: integrity: mssql: Invalid column name 'event_time'.
+2026-04-16 19:24:12 [INFO ] [SHAKORYSMARTTEC] Connections | total=13 active=5 blocked=0
+2026-04-16 19:24:12 [INFO ] [SHAKORYSMARTTEC] Queries | no queries exceeding 5000ms
+2026-04-16 19:24:12 [INFO ] [SHAKORYSMARTTEC] Resources | cpu=4% mem_avail=1273MB (used=84.2%) sql_mem=166MB
+2026-04-16 19:24:12 [INFO ] [SHAKORYSMARTTEC] Replication | No AG configured
+2026-04-16 19:24:12 [INFO ] [SHAKORYSMARTTEC] Jobs | no failures in lookback window
+2026-04-16 19:24:12 [INFO ] [SHAKORYSMARTTEC] Waits | top=SOS_WORK_DISPATCHER (Other) 78.8% avg=47.0ms
+2026-04-16 19:24:12 [INFO ] [SHAKORYSMARTTEC] QueryStore | top_cpu=10 regressed=5 forced_plans=0
+2026-04-16 19:24:12 [ERROR] [SHAKORYSMARTTEC] CustomMetric[PendingEmailQueue]: mssql: Database 'AppDB' does not exist. Make sure that the name is entered correctly.
+2026-04-16 19:24:12 [ERROR] [SHAKORYSMARTTEC] CustomMetric[TempDBFreePct]: mssql: Invalid column name 'size'.
+2026-04-16 19:24:24 [ERROR] [iPay          ] Collection error: connection failed (backoff 2m): ping failed: unable to open tcp connection with host '20.196.197.156:1433': dial tcp 20.196.197.156:1433: i/o timeout
+2026-04-16 19:24:24 [INFO ] [SYSTEM        ] Collection cycle complete | duration=15.001s | ok=1 | failed=1
+2026-04-16 19:24:52 [INFO ] [SYSTEM        ] Signal: interrupt — shutting down
