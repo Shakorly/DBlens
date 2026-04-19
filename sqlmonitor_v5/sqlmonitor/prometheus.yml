@@ -1,9 +1,0 @@
-global:
-  scrape_interval: 60s
-  evaluation_interval: 60s
-
-scrape_configs:
-  - job_name: "dblens"
-    static_configs:
-      - targets: ["dblens:9090"]
-    metrics_path: /metrics
