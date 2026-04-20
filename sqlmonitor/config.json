@@ -1,76 +1,141 @@
-{
-  "_comment": "DBLens Monitor v5 - Clean & Secure config for production",
+package config
 
-  "poll_interval_seconds": 60,
-  "slow_query_threshold_ms": 5000,
-  "max_connections_threshold": 200,
-  "cpu_alert_threshold_pct": 80,
-  "memory_alert_threshold_pct": 10,
-  "disk_io_alert_ms": 50,
-  "replication_lag_alert_seconds": 30,
-  "backup_full_alert_hours": 25,
-  "backup_log_alert_hours": 4,
+import (
+    "fmt"
+    "os"
+    "strconv"
+    "time"
+)
 
-  "index_check_hours": 6,
-  "integrity_check_hours": 24,
-  "disk_warn_free_pct": 20,
-  "disk_crit_free_pct": 10,
-
-  "anomaly_threshold_pct": 30,
-  "anomaly_min_samples": 10,
-
-  "log_file": "sql_monitor.log",
-  "log_level": "INFO",
-  "log_max_size_mb": 50,
-  "log_max_files": 30,
-
-  "dashboard_enabled": true,
-  "dashboard_port": 8080,
-
-  "prometheus_enabled": false,
-  "prometheus_port": 9090,
-
-  "alert_channels": [
-  {
-    "name": "Gmail-Alert",
-    "type": "email",
-    "enabled": false,
-    "smtp_host": "smtp.gmail.com",
-    "smtp_port": 587,
-    "smtp_user": "Yourgmail",          
-    "smtp_pass": "akie ddvj nxae bigu",             
-    "from_addr": "your gmail",
-    "to_addrs": "Receiver gmail",
-    "min_severity": "WARN"
-  }
-]
-,
-
-  "custom_metrics": [],
-
-  "servers": [
-  
-    {
-      "name": "serverName",
-      "host": "20.696.107.186",
-      "port": 1433,
-      "username": "sqlmonitor_user",
-      "password": "YourPasswordInTheEnvVariables",
-      "databases": ["master", "msdb", "Test", "StackOverFlow2010"]
-    }
-  ]
+// DB holds database connection settings
+type DB struct {
+    Server   string        `env:"DBLENS_DB_SERVER"`
+    Database string        `env:"DBLENS_DB_DATABASE"`
+    User     string        `env:"DBLENS_DB_USER"`
+    Password string        `env:"DBLENS_DB_PASSWORD"`
+    Port     int           `env:"DBLENS_DB_PORT"`
+    Timeout  time.Duration `env:"DBLENS_DB_TIMEOUT"`
 }
 
+// Alerts holds all notification channels (Email, Slack, etc.)
+type Alerts struct {
+    Email struct {
+        Enabled      bool   `env:"DBLENS_ALERT_EMAIL_ENABLED"`
+        SMTPServer   string `env:"DBLENS_ALERT_EMAIL_SMTP"`
+        SMTPPort     int    `env:"DBLENS_ALERT_EMAIL_PORT"`
+        Username     string `env:"DBLENS_ALERT_EMAIL_USER"`
+        Password     string `env:"DBLENS_ALERT_EMAIL_PASSWORD"`
+        From         string `env:"DBLENS_ALERT_EMAIL_FROM"`
+        To           string `env:"DBLENS_ALERT_EMAIL_TO"`
+    }
+    Slack struct {
+        Enabled bool   `env:"DBLENS_ALERT_SLACK_ENABLED"`
+        Webhook string `env:"DBLENS_ALERT_SLACK_WEBHOOK"`
+    }
+}
 
+// Config is the root configuration (everything the app needs)
+type Config struct {
+    DB     DB
+    Alerts Alerts
+}
 
+// Load loads and validates the full configuration
+func Load() (Config, error) {
+    cfg := Config{
+        DB: DB{
+            Server:   getEnv("DBLENS_DB_SERVER", "localhost"),
+            Database: getEnv("DBLENS_DB_DATABASE", "master"),
+            User:     getEnv("DBLENS_DB_USER", "sa"),
+            Password: os.Getenv("DBLENS_DB_PASSWORD"), // must be set
+            Port:     getEnvInt("DBLENS_DB_PORT", 1433),
+            Timeout:  getEnvDuration("DBLENS_DB_TIMEOUT", 10*time.Second),
+        },
+        Alerts: Alerts{
+            Email: struct {
+                Enabled      bool   `env:"DBLENS_ALERT_EMAIL_ENABLED"`
+                SMTPServer   string `env:"DBLENS_ALERT_EMAIL_SMTP"`
+                SMTPPort     int    `env:"DBLENS_ALERT_EMAIL_PORT"`
+                Username     string `env:"DBLENS_ALERT_EMAIL_USER"`
+                Password     string `env:"DBLENS_ALERT_EMAIL_PASSWORD"`
+                From         string `env:"DBLENS_ALERT_EMAIL_FROM"`
+                To           string `env:"DBLENS_ALERT_EMAIL_TO"`
+            }{
+                Enabled:    getEnvBool("DBLENS_ALERT_EMAIL_ENABLED", false),
+                SMTPServer: getEnv("DBLENS_ALERT_EMAIL_SMTP", ""),
+                SMTPPort:   getEnvInt("DBLENS_ALERT_EMAIL_PORT", 587),
+                Username:   getEnv("DBLENS_ALERT_EMAIL_USER", ""),
+                Password:   os.Getenv("DBLENS_ALERT_EMAIL_PASSWORD"),
+                From:       getEnv("DBLENS_ALERT_EMAIL_FROM", ""),
+                To:         getEnv("DBLENS_ALERT_EMAIL_TO", ""),
+            },
+            Slack: struct {
+                Enabled bool   `env:"DBLENS_ALERT_SLACK_ENABLED"`
+                Webhook string `env:"DBLENS_ALERT_SLACK_WEBHOOK"`
+            }{
+                Enabled: getEnvBool("DBLENS_ALERT_SLACK_ENABLED", false),
+                Webhook: os.Getenv("DBLENS_ALERT_SLACK_WEBHOOK"),
+            },
+        },
+    }
 
+    if err := cfg.Validate(); err != nil {
+        return Config{}, fmt.Errorf("invalid configuration: %w", err)
+    }
 
+    return cfg, nil
+}
 
- 
+// Validate checks all required fields
+func (c Config) Validate() error {
+    // DB validation
+    if c.DB.Server == "" || c.DB.User == "" || c.DB.Password == "" {
+        return fmt.Errorf("database credentials are required (DBLENS_DB_* variables)")
+    }
+    if c.DB.Port < 1 || c.DB.Port > 65535 {
+        return fmt.Errorf("DBLENS_DB_PORT must be valid")
+    }
 
+    // Optional: Email validation only if enabled
+    if c.Alerts.Email.Enabled {
+        if c.Alerts.Email.SMTPServer == "" || c.Alerts.Email.From == "" || c.Alerts.Email.To == "" {
+            return fmt.Errorf("email alerts enabled but missing SMTPServer/From/To")
+        }
+    }
 
+    return nil
+}
 
+// Helper functions
+func getEnv(key, fallback string) string {
+    if v := os.Getenv(key); v != "" {
+        return v
+    }
+    return fallback
+}
 
+func getEnvInt(key string, fallback int) int {
+    if v := os.Getenv(key); v != "" {
+        if i, err := strconv.Atoi(v); err == nil {
+            return i
+        }
+    }
+    return fallback
+}
 
+func getEnvDuration(key string, fallback time.Duration) time.Duration {
+    if v := os.Getenv(key); v != "" {
+        if d, err := time.ParseDuration(v); err == nil {
+            return d
+        }
+    }
+    return fallback
+}
 
-
+func getEnvBool(key string, fallback bool) bool {
+    v := os.Getenv(key)
+    if v == "" {
+        return fallback
+    }
+    return v == "true" || v == "1" || v == "yes"
+}
