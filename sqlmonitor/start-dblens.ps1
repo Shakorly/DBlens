@@ -8,7 +8,7 @@ $env:DBLENS_PASS_ServerName = "YourSqlmonitorPassword"
 
 
 # Optional: Global fallback password (uncomment if needed)
-# $env:DBLENS_PASS = "Faith.com123"
+# $env:DBLENS_PASS = "YourStrongPassword"
 
 Write-Host "✅ DBLens passwords loaded successfully" -ForegroundColor Green
 
