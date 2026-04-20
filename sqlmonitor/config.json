@@ -1,141 +1,118 @@
 package config
 
 import (
+    "encoding/json"
     "fmt"
     "os"
-    "strconv"
     "time"
 )
 
-// DB holds database connection settings
-type DB struct {
-    Server   string        `env:"DBLENS_DB_SERVER"`
-    Database string        `env:"DBLENS_DB_DATABASE"`
-    User     string        `env:"DBLENS_DB_USER"`
-    Password string        `env:"DBLENS_DB_PASSWORD"`
-    Port     int           `env:"DBLENS_DB_PORT"`
-    Timeout  time.Duration `env:"DBLENS_DB_TIMEOUT"`
-}
-
-// Alerts holds all notification channels (Email, Slack, etc.)
-type Alerts struct {
-    Email struct {
-        Enabled      bool   `env:"DBLENS_ALERT_EMAIL_ENABLED"`
-        SMTPServer   string `env:"DBLENS_ALERT_EMAIL_SMTP"`
-        SMTPPort     int    `env:"DBLENS_ALERT_EMAIL_PORT"`
-        Username     string `env:"DBLENS_ALERT_EMAIL_USER"`
-        Password     string `env:"DBLENS_ALERT_EMAIL_PASSWORD"`
-        From         string `env:"DBLENS_ALERT_EMAIL_FROM"`
-        To           string `env:"DBLENS_ALERT_EMAIL_TO"`
-    }
-    Slack struct {
-        Enabled bool   `env:"DBLENS_ALERT_SLACK_ENABLED"`
-        Webhook string `env:"DBLENS_ALERT_SLACK_WEBHOOK"`
-    }
-}
-
-// Config is the root configuration (everything the app needs)
+// Config is the root configuration - matches your v5 JSON exactly
 type Config struct {
-    DB     DB
-    Alerts Alerts
+    PollIntervalSeconds     int    `json:"poll_interval_seconds"`
+    SlowQueryThresholdMs    int    `json:"slow_query_threshold_ms"`
+    MaxConnectionsThreshold int    `json:"max_connections_threshold"`
+    CPUAlertThresholdPct    int    `json:"cpu_alert_threshold_pct"`
+    MemoryAlertThresholdPct int    `json:"memory_alert_threshold_pct"`
+    DiskIOAlertMs           int    `json:"disk_io_alert_ms"`
+    ReplicationLagAlertSec  int    `json:"replication_lag_alert_seconds"`
+    BackupFullAlertHours    int    `json:"backup_full_alert_hours"`
+    BackupLogAlertHours     int    `json:"backup_log_alert_hours"`
+    IndexCheckHours         int    `json:"index_check_hours"`
+    IntegrityCheckHours     int    `json:"integrity_check_hours"`
+    DiskWarnFreePct         int    `json:"disk_warn_free_pct"`
+    DiskCritFreePct         int    `json:"disk_crit_free_pct"`
+    AnomalyThresholdPct     int    `json:"anomaly_threshold_pct"`
+    AnomalyMinSamples       int    `json:"anomaly_min_samples"`
+
+    LogFile       string `json:"log_file"`
+    LogLevel      string `json:"log_level"`
+    LogMaxSizeMB  int    `json:"log_max_size_mb"`
+    LogMaxFiles   int    `json:"log_max_files"`
+
+    DashboardEnabled  bool `json:"dashboard_enabled"`
+    DashboardPort     int  `json:"dashboard_port"`
+    PrometheusEnabled bool `json:"prometheus_enabled"`
+    PrometheusPort    int  `json:"prometheus_port"`
+
+    AlertChannels []AlertChannel `json:"alert_channels"`
+    CustomMetrics []interface{}  `json:"custom_metrics"`
+    Servers       []Server       `json:"servers"`
 }
 
-// Load loads and validates the full configuration
+// AlertChannel matches your email example
+type AlertChannel struct {
+    Name        string `json:"name"`
+    Type        string `json:"type"`
+    Enabled     bool   `json:"enabled"`
+    SMTPHost    string `json:"smtp_host"`
+    SMTPPort    int    `json:"smtp_port"`
+    SMTPUser    string `json:"smtp_user"`
+    SMTPPass    string `json:"smtp_pass"`
+    FromAddr    string `json:"from_addr"`
+    ToAddrs     []string `json:"to_addrs"`
+    MinSeverity string `json:"min_severity"`
+}
+
+// Server matches your servers array
+type Server struct {
+    Name       string   `json:"name"`
+    Host       string   `json:"host"`
+    Port       int      `json:"port"`
+    Username   string   `json:"username"`
+    Password   string   `json:"password"`
+    Databases  []string `json:"databases"`
+}
+
+// Load is the single entry point
 func Load() (Config, error) {
-    cfg := Config{
-        DB: DB{
-            Server:   getEnv("DBLENS_DB_SERVER", "localhost"),
-            Database: getEnv("DBLENS_DB_DATABASE", "master"),
-            User:     getEnv("DBLENS_DB_USER", "sa"),
-            Password: os.Getenv("DBLENS_DB_PASSWORD"), // must be set
-            Port:     getEnvInt("DBLENS_DB_PORT", 1433),
-            Timeout:  getEnvDuration("DBLENS_DB_TIMEOUT", 10*time.Second),
-        },
-        Alerts: Alerts{
-            Email: struct {
-                Enabled      bool   `env:"DBLENS_ALERT_EMAIL_ENABLED"`
-                SMTPServer   string `env:"DBLENS_ALERT_EMAIL_SMTP"`
-                SMTPPort     int    `env:"DBLENS_ALERT_EMAIL_PORT"`
-                Username     string `env:"DBLENS_ALERT_EMAIL_USER"`
-                Password     string `env:"DBLENS_ALERT_EMAIL_PASSWORD"`
-                From         string `env:"DBLENS_ALERT_EMAIL_FROM"`
-                To           string `env:"DBLENS_ALERT_EMAIL_TO"`
-            }{
-                Enabled:    getEnvBool("DBLENS_ALERT_EMAIL_ENABLED", false),
-                SMTPServer: getEnv("DBLENS_ALERT_EMAIL_SMTP", ""),
-                SMTPPort:   getEnvInt("DBLENS_ALERT_EMAIL_PORT", 587),
-                Username:   getEnv("DBLENS_ALERT_EMAIL_USER", ""),
-                Password:   os.Getenv("DBLENS_ALERT_EMAIL_PASSWORD"),
-                From:       getEnv("DBLENS_ALERT_EMAIL_FROM", ""),
-                To:         getEnv("DBLENS_ALERT_EMAIL_TO", ""),
-            },
-            Slack: struct {
-                Enabled bool   `env:"DBLENS_ALERT_SLACK_ENABLED"`
-                Webhook string `env:"DBLENS_ALERT_SLACK_WEBHOOK"`
-            }{
-                Enabled: getEnvBool("DBLENS_ALERT_SLACK_ENABLED", false),
-                Webhook: os.Getenv("DBLENS_ALERT_SLACK_WEBHOOK"),
-            },
-        },
+    // 1. Try to load from JSON file (backward compatible with your old config)
+    configPath := os.Getenv("DBLENS_CONFIG")
+    if configPath == "" {
+        configPath = "config.json" // default name
     }
+
+    data, err := os.ReadFile(configPath)
+    if err != nil {
+        return Config{}, fmt.Errorf("cannot read config file %s: %w", configPath, err)
+    }
+
+    var cfg Config
+    if err := json.Unmarshal(data, &cfg); err != nil {
+        return Config{}, fmt.Errorf("invalid JSON in %s: %w", configPath, err)
+    }
+
+    // 2. Override sensitive fields with environment variables (secure)
+    overrideFromEnv(&cfg)
 
     if err := cfg.Validate(); err != nil {
-        return Config{}, fmt.Errorf("invalid configuration: %w", err)
+        return Config{}, fmt.Errorf("config validation failed: %w", err)
     }
 
     return cfg, nil
 }
 
-// Validate checks all required fields
+// overrideFromEnv allows secure overrides (especially passwords)
+func overrideFromEnv(cfg *Config) {
+    if pass := os.Getenv("DBLENS_DB_PASSWORD"); pass != "" {
+        for i := range cfg.Servers {
+            if cfg.Servers[i].Password == "" {
+                cfg.Servers[i].Password = pass
+            }
+        }
+    }
+    // You can add more overrides later (email password, etc.)
+}
+
+// Validate ensures the config makes sense
 func (c Config) Validate() error {
-    // DB validation
-    if c.DB.Server == "" || c.DB.User == "" || c.DB.Password == "" {
-        return fmt.Errorf("database credentials are required (DBLENS_DB_* variables)")
+    if len(c.Servers) == 0 {
+        return fmt.Errorf("at least one server is required in config")
     }
-    if c.DB.Port < 1 || c.DB.Port > 65535 {
-        return fmt.Errorf("DBLENS_DB_PORT must be valid")
-    }
-
-    // Optional: Email validation only if enabled
-    if c.Alerts.Email.Enabled {
-        if c.Alerts.Email.SMTPServer == "" || c.Alerts.Email.From == "" || c.Alerts.Email.To == "" {
-            return fmt.Errorf("email alerts enabled but missing SMTPServer/From/To")
+    for i, s := range c.Servers {
+        if s.Host == "" || s.Username == "" {
+            return fmt.Errorf("server %d is missing host or username", i)
         }
     }
-
     return nil
-}
-
-// Helper functions
-func getEnv(key, fallback string) string {
-    if v := os.Getenv(key); v != "" {
-        return v
-    }
-    return fallback
-}
-
-func getEnvInt(key string, fallback int) int {
-    if v := os.Getenv(key); v != "" {
-        if i, err := strconv.Atoi(v); err == nil {
-            return i
-        }
-    }
-    return fallback
-}
-
-func getEnvDuration(key string, fallback time.Duration) time.Duration {
-    if v := os.Getenv(key); v != "" {
-        if d, err := time.ParseDuration(v); err == nil {
-            return d
-        }
-    }
-    return fallback
-}
-
-func getEnvBool(key string, fallback bool) bool {
-    v := os.Getenv(key)
-    if v == "" {
-        return fallback
-    }
-    return v == "true" || v == "1" || v == "yes"
 }
