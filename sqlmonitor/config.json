@@ -55,7 +55,7 @@
       "host": "20.696.107.186",
       "port": 1433,
       "username": "sqlmonitor_user",
-      "password": "",
+      "password": "YourPasswordInTheEnvVariables",
       "databases": ["master", "msdb", "Test", "StackOverFlow2010"]
     }
   ]
