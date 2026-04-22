@@ -1,4 +1,11 @@
 // fix/backups.go  → Replace the CollectBackups function
+package main
+
+import (
+	"context"
+	"database/sql"
+	"time"
+)
 
 func CollectBackups(ctx context.Context, db *sql.DB, serverName string,
 	fullAlertHours, logAlertHours float64) (*BackupStatus, error) {
