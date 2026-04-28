@@ -4,23 +4,23 @@
 
 WHAT YOU NEED IN THIS FOLDER
 ──────────────────────────────
-  sqlmonitor.exe     ← copy your exe here (the only file you add)
-  config.json        ← already here, edited by the menu
+  sqlmonitor.exe     ← 
+  config.json        
   DBLens.bat         ← the ONE file you double-click for everything
   Manage-Servers.ps1 ← used automatically by DBLens.bat option 2
 
 
-HOW TO START (3 steps)
+HOW TO START (2 steps)
 ──────────────────────
-  1. Copy sqlmonitor.exe into this folder.
+ 
 
-  2. Double-click  DBLens.bat
+  1. Double-click  DBLens.bat
      Choose option 2 — "Add / Edit servers"
      Enter your SQL Server name, host, port, username, password.
      Press Enter after each field.
      Type 5 when done to go back.
 
-  3. Choose option 1 — "Start DBLens"
+  2. Choose option 1 — "Start DBLens"
      The dashboard opens automatically at http://localhost:8080
      Keep the window open. Close it to stop.
 
