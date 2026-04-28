@@ -1,0 +1,33 @@
+{
+    "poll_interval_seconds":  60,
+    "slow_query_threshold_ms":  5000,
+    "max_connections_threshold":  200,
+    "cpu_alert_threshold_pct":  80,
+    "memory_alert_threshold_pct":  10,
+    "disk_io_alert_ms":  50,
+    "replication_lag_alert_seconds":  30,
+    "backup_full_alert_hours":  25,
+    "backup_log_alert_hours":  4,
+    "index_frag_alert_pct":  30,
+    "job_failure_lookback_hours":  2,
+    "alert_cooldown_minutes":  10,
+    "anomaly_threshold_pct":  30,
+    "anomaly_min_samples":  10,
+    "log_file":  "dblens.log",
+    "log_level":  "INFO",
+    "log_max_size_mb":  50,
+    "log_max_files":  30,
+    "log_compress_old":  true,
+    "dashboard_enabled":  true,
+    "dashboard_port":  8080,
+    "prometheus_enabled":  false,
+    "prometheus_port":  9090,
+    "alert_channels":  [
+
+                       ],
+    "custom_metrics":  [
+
+                       ],
+    "servers":  [
+                                    ]
+}
